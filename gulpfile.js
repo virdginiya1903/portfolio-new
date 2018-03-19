@@ -4,6 +4,9 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
+const StyleLint = require('gulp-stylelint');
+const plumber = require('gulp-plumber');
+
 
 const del = require('del');
 
@@ -12,6 +15,10 @@ const browserSync = require('browser-sync').create();
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
+const eslint = require('gulp-eslint');
+const babel = require('gulp-babel');
+
+
 
 const paths = {
     root: './build',
@@ -43,11 +50,18 @@ function templates() {
 // scss
 function styles() {
     return gulp.src('./src/styles/app.scss')
+        .pipe(plumber())
+        .pipe(StyleLint({
+            reporters: [
+                {formatter: 'string', console: true, fix: true}
+            ]
+        }))
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest))
+
 }
 
 // очистка
@@ -80,9 +94,19 @@ function images() {
 // webpack
 function scripts() {
     return gulp.src('src/scripts/app.js')
+        .pipe(plumber())
+        .pipe(eslint({fix: true}))
+        .pipe(eslint.format())
+        // .pipe(babel({ presets: ['@babel/env']} ))
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }
+
+//автопрефикс
+
+
+
+
 
 exports.templates = templates;
 exports.styles = styles;
