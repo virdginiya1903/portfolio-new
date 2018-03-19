@@ -6,6 +6,7 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const StyleLint = require('gulp-stylelint');
 const plumber = require('gulp-plumber');
+const sassGlob = require('gulp-sass-glob');
 
 
 const del = require('del');
@@ -18,6 +19,7 @@ const webpackConfig = require('./webpack.config.js');
 const eslint = require('gulp-eslint');
 const babel = require('gulp-babel');
 
+const imagemin = require('gulp-imagemin');
 
 
 const paths = {
@@ -60,6 +62,7 @@ function styles() {
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
+        .pipe(sassGlob())
         .pipe(gulp.dest(paths.styles.dest))
 
 }
@@ -88,7 +91,19 @@ function server() {
 // просто переносим картинки
 function images() {
     return gulp.src(paths.images.src)
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
         .pipe(gulp.dest(paths.images.dest));
+
 }
 
 // webpack
