@@ -21,6 +21,8 @@ const babel = require('gulp-babel');
 
 const imagemin = require('gulp-imagemin');
 
+const ghPages = require('gulp-gh-pages');
+
 
 const paths = {
     root: './build',
@@ -120,7 +122,11 @@ function scripts() {
 //автопрефикс
 
 
-
+//ghPages
+gulp.task('deploy', function() {
+    return gulp.src('./build/**/*')
+        .pipe(ghPages());
+});
 
 
 exports.templates = templates;
