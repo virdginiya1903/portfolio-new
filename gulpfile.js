@@ -95,7 +95,6 @@ function watch() {
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
-    gulp.watch(paths.src + 'icons/*.svg', svgSpriteBuild);
 
 }
 
@@ -137,39 +136,31 @@ function scripts() {
 }
 
 //svg
-function svgSpriteBuild() { 
-    return gulp.src(paths.src + 'icons/*.svg')
-    // minify svg
-      .pipe(plumber())
+gulp.task('sprite', function() {
+    return gulp.src('src/icons/*.svg')
+      // минифицируем svg
       .pipe(svgmin({
         js2svg: {
           pretty: true
         }
       }))
+      // удалить все атрибуты fill, style and stroke в фигурах
       .pipe(cheerio({
-        run: function ($) {
+        run: function($) {
           $('[fill]').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
           $('[style]').removeAttr('style');
         },
-        parserOptions: {xmlMode: true}
-      }))
-      .pipe(replace('&gt;', '>'))
-      .pipe(svgSprite({
-        mode: {
-          symbol: {
-            sprite: "../sprite.svg",
-            render: {
-              scss: {
-                dest: paths.src + '../_sprite.scss',
-                template: paths.src + "styles/common/sprites.scss"
-              }
-            }
-          }
+        parserOptions: {
+          xmlMode: true
         }
       }))
-      .pipe(gulp.dest(paths.build + 'img/'));
-  };
+      // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
+      .pipe(replace('&gt;', '>'))
+      // build svg sprite
+      .pipe(svgSprite(config))
+      .pipe(gulp.dest('src/images/'));
+  });
   
 
 
@@ -184,7 +175,6 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
-exports.svgSpriteBuild = svgSpriteBuild;
 
 
 
@@ -193,7 +183,7 @@ gulp.task('default', gulp.series(
     clean,
     gulp.parallel(styles, templates, images, scripts),
     gulp.parallel(watch, server),
-    gulp.parallel(svgSpriteBuild),
+    // gulp.parallel(sprite)
 
 ));
 
