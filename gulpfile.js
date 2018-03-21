@@ -23,6 +23,13 @@ const imagemin = require('gulp-imagemin');
 
 const ghPages = require('gulp-gh-pages');
 
+//svg
+const cheerio = require('gulp-cheerio'); 
+const replace = require('gulp-replace');
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+
+
 
 const paths = {
     root: './build',
@@ -80,6 +87,8 @@ function watch() {
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.src + 'icons/*.svg', svgSpriteBuild);
+
 }
 
 // локальный сервер + livereload (встроенный)
@@ -119,7 +128,41 @@ function scripts() {
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
-//автопрефикс
+//svg
+function svgSpriteBuild() { 
+    return gulp.src(paths.src + 'icons/*.svg')
+    // minify svg
+      .pipe(plumber())
+      .pipe(svgmin({
+        js2svg: {
+          pretty: true
+        }
+      }))
+      .pipe(cheerio({
+        run: function ($) {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: {xmlMode: true}
+      }))
+      .pipe(replace('&gt;', '>'))
+      .pipe(svgSprite({
+        mode: {
+          symbol: {
+            sprite: "../sprite.svg",
+            render: {
+              scss: {
+                dest: paths.src + '../_sprite.scss',
+                template: paths.src + "scss/templates/_sprite_template.scss"
+              }
+            }
+          }
+        }
+      }))
+      .pipe(gulp.dest(paths.build + 'img/'));
+  };
+  
 
 
 //ghPages
@@ -133,11 +176,16 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
+exports.svgSpriteBuild = svgSpriteBuild;
+
 
 
 
 gulp.task('default', gulp.series(
     clean,
     gulp.parallel(styles, templates, images, scripts),
-    gulp.parallel(watch, server)
+    gulp.parallel(watch, server),
+    gulp.parallel(svgSpriteBuild),
+
 ));
+
