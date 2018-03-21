@@ -8,7 +8,6 @@ const StyleLint = require('gulp-stylelint');
 const plumber = require('gulp-plumber');
 const sassGlob = require('gulp-sass-glob');
 
-
 const del = require('del');
 
 const browserSync = require('browser-sync').create();
@@ -24,12 +23,21 @@ const imagemin = require('gulp-imagemin');
 const ghPages = require('gulp-gh-pages');
 
 //svg
-const cheerio = require('gulp-cheerio'); 
+const cheerio = require('gulp-cheerio'); //jquery для , парсить страницу
 const replace = require('gulp-replace');
-const svgSprite = require('gulp-svg-sprite');
-const svgmin = require('gulp-svgmin');
+const svgSprite = require('gulp-svg-sprite'); // создает спрайты
+const svgmin = require('gulp-svgmin'); // оптимизация спрайтов
 
-
+const config = {
+    mode: {
+      symbol: {
+        sprite: "../sprite.svg",
+        example: {
+          dest: '../spriteSvgDemo.html' // демо html
+        }
+      }
+    }
+  };
 
 const paths = {
     root: './build',
@@ -154,7 +162,7 @@ function svgSpriteBuild() {
             render: {
               scss: {
                 dest: paths.src + '../_sprite.scss',
-                template: paths.src + "scss/templates/_sprite_template.scss"
+                template: paths.src + "styles/common/sprites.scss"
               }
             }
           }
