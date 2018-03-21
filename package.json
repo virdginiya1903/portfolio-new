@@ -4,11 +4,13 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "svgbuild": "svgo -f src/icons -o src/icons/out --config=svgo.config && svg-sprite-generate -d src/icons/out -o src/images/_sprite.svg"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
