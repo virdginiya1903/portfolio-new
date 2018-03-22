@@ -23,7 +23,7 @@ const imagemin = require('gulp-imagemin');
 const ghPages = require('gulp-gh-pages');
 
 //svg
-const cheerio = require('gulp-cheerio'); // парсить страницу
+const cheerio = require('gulp-cheerio'); //jquery для , парсить страницу
 const replace = require('gulp-replace');
 const svgSprite = require('gulp-svg-sprite'); // создает спрайты
 const svgmin = require('gulp-svgmin'); // оптимизация спрайтов
@@ -183,7 +183,6 @@ gulp.task('default', gulp.series(
     clean,
     gulp.parallel(styles, templates, images, scripts),
     gulp.parallel(watch, server),
-    // gulp.parallel(sprite)
 
 ));
 
