@@ -4,6 +4,7 @@
     overflow: hidden;
     border-radius: 50%; 
     background: url('../images/img/03.jpg') center center no-repeat;
+    margin-top: rem(40px);
 }
 .profil__title {
     font-family: robotomedium;
@@ -18,9 +19,13 @@
     font-family: robotoregular;
     font-weight: 400;
     text-align: center;
+    margin-top: rem(5px);
  }
  .profil {
      display: flex;
      flex-direction: column;
      align-items: center;
  }
+.profil__desc {
+    margin-top: rem(17px);
+}

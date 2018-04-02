@@ -3,4 +3,40 @@
     height: rem(426px);
     background: $dark-green;
     border-radius: 15px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+
+.welcome__list {
+    display: flex;
+    border-radius: 0 0 5px 5px; 
+    overflow: hidden;
+
+}
+.welcome__socials  {
+    margin-top: -30px;
+}
+.welcome__link {
+    font-family: 'robotomedium';
+    color:rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    background-color: rgba(108, 156, 90, 0.7);
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+
+    &:hover {
+    background-color: rgba(108, 156, 90, 1);
+    }
+}
+.welcome__items {
+    display: flex;
+    flex: 1 1 100px;
+    border-left: rgba(255, 255, 255, 0.7) solid 2px;
+    
+    &:first-child {
+        border-left: rgba(108, 156, 90, 0.7) solid 2px;
+    }
 }
