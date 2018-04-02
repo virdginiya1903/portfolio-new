@@ -5,11 +5,13 @@ block variables
 
 block content
     section.section.welcome
-        h1 Главная 
-        form
-            label(for="email") email
-            input(name="email" id="email")
-            label(for="password") password
-            input(name="password" id="password")
-            button.login Авторизоваться
+        h2.welcome__title.visually-hidden  Портфолио разработчика
+        button.welcome__login Авторизоваться
+        .welcome__flipper.flipper
+            .welcome__desc.profil
+                .profil__pic
+                    img(src="assets/images/img/03.jpg", alt="avatar").photo__avatar.visually-hidden
+                h3.profil__title  Ахметова Гузель 
+                p.profil__text Личный сайт веб разработчика
+
 

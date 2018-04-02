@@ -1,0 +1,26 @@
+.profil__pic {
+    width: rem(141px);
+    height: rem(141px);
+    overflow: hidden;
+    border-radius: 50%; 
+    background: url('../images/img/03.jpg') center center no-repeat;
+}
+.profil__title {
+    font-family: robotomedium;
+    font-size: rem(28px); 
+    color: $white;
+    font-weight: 500;  
+    text-align: center;
+ }
+ .profil__text {
+    opacity: 0.8;
+    color: $white;
+    font-family: robotoregular;
+    font-weight: 400;
+    text-align: center;
+ }
+ .profil {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }

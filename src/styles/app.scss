@@ -1,6 +1,7 @@
 @import 'common/config.scss';
 @import 'common/normalize.scss';
-@import 'common/color.scss';
+@import 'common/variables.scss';
+@import 'common/fonts.scss';
 @import 'common/global.scss';
 @import 'common/menu';
 @import 'common/technologies';
@@ -10,3 +11,6 @@
 @import 'common/welcome.scss';
 @import 'common/section.scss';
 @import 'common/login.scss';
+@import 'common/standart.scss';
+@import 'common/flipper.scss';
+@import 'common/profil.scss';

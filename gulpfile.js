@@ -95,6 +95,8 @@ function watch() {
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.src + '/fonts/*.{otf,ttf,woff,woff2}', copyFonts);
+
 
 }
 
@@ -170,18 +172,32 @@ gulp.task('deploy', function() {
         .pipe(ghPages());
 });
 
+const fonts = 
+  paths.src + '/fonts/*.{otf,ttf,woff,woff2}';
+
+  function copyFonts() { 
+    if(fonts.length) {
+      return gulp.src(fonts)
+        .pipe(gulp.dest(paths.build + '/assets/fonts'));
+    }
+    else {
+      console.log('Шрифты не обрабатываются.');
+      callback();
+    }
+  };
 
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
+exports.copyFonts = copyFonts;
 
 
 
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts),
+    gulp.parallel(styles, templates, images, scripts,copyFonts),
     gulp.parallel(watch, server),
 
 ));
