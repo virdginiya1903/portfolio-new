@@ -5,17 +5,8 @@ block variables
 
 block content
     section.section.hero
-        .hero__links
-            - 
-                var socials = [
-                    ['vk', 'vk.com'],
-                    ['tw', 'tw.com'],
-                    ['in', 'in.com'],
-                ]   
-            ul.socials
-                each item in ['vk', 'tw', 'in']
-                    li.socials__item
-                        a(href='${item[1]}').socials__link #{item[0]}
+        .hero__socials
+            include ../common/socials.pug
         .hero__menu.hamburger
         .hero__title
             .section-title
@@ -87,10 +78,7 @@ block content
             .footer-col.footer-col--left
                 include ../common/menu.pug
             .footer-col.footer-col--right
-                ul.socials.socials--rounded
-                    each item in ['vk', 'tw', 'in']
-                        li.socials__item
-                            a(href='${item[1]}').socials__link #{item[0]}
+                
         .footer-row
             .footer-col.footer-col--left
                 p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.  

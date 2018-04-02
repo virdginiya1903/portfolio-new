@@ -1,4 +1,4 @@
 const slider = require('./common/slider');
-const S = require('jquery');
+//const jquery = require('jquery');
 
 slider(); // инициализируем слайдер

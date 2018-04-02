@@ -1,8 +1,12 @@
 @import 'common/config.scss';
 @import 'common/normalize.scss';
 @import 'common/color.scss';
+@import 'common/global.scss';
 @import 'common/menu';
 @import 'common/technologies';
 @import 'common/slider';
 @import 'common/hamburger.scss';
-
+@import 'common/_hero.scss';
+@import 'common/welcome.scss';
+@import 'common/section.scss';
+@import 'common/login.scss';
