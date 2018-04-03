@@ -1,3 +1,11 @@
 .hero {
     background: url('../images/img/photo-1454111079122-eb76eb2d5754.jpg' ) center center no-repeat;
+    background-size: cover;
+    min-height: rem(620px);
 }
+
+.hero__header {
+    display: flex;
+    justify-content: space-between;
+}
+

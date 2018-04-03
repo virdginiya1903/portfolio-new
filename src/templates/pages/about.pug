@@ -5,56 +5,53 @@ block variables
 
 block content
     section.section.hero
-        .hero__socials
-            include ../common/socials.pug
-        .hero__menu.hamburger
-        .hero__title
-            .section-title
-            img(src="", alt="").section-title__img
-        .user.hero__user
-            .user__pic
-                img.user__avatar
-            .user__description
-                .user__name Владимир Астахов
-                .user__desc Личный сайт веб разработчика
-        .arrow-down.hero__scroll-button
+        .container
+            header.hero__header
+                .hero__socials
+                    include ../common/socials.pug
+                .hero__menu    
+                    a(href="#").hamburger
+                        .hamburger__bars
+            include ../common/profil.pug       
+            .arrow-down.hero__scroll-button
 
     main.section.about
-        .about__left
-            .triangle.about__triangle-left
-                svg.triangle-shape.triangle-shape--fill-white
-            .about__left-title
-                .block-title Обо мне
-            .about__left-description
-                .user-description
-                    .user-description__image
-                        img(src="", alt="").user-description__avatar
-                    .user-description__title
-                        .block-subtitle Кто я
-                    .user-description__text.text-content
-                        p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. 
-                        p Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
-                        p А пока посмотрите, как тут всё классно и красиво!
+        .container
+            .about__left
+                .triangle.about__triangle-left
+                    svg.triangle-shape.triangle-shape--fill-white
+                .about__left-title
+                    .block-title Обо мне
+                .about__left-description
+                    .user-description
+                        .user-description__image
+                            img(src="", alt="").user-description__avatar
+                        .user-description__title
+                            .block-subtitle Кто я
+                        .user-description__text.text-content
+                            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. 
+                            p Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
+                            p А пока посмотрите, как тут всё классно и красиво!
 
 
-        .about__right
-            .triangle.about__triangle-right
-                svg.triangle-shape.triangle-shape--fill-beige
-            .about__right-title
-                .block-subtitle Чем я могу быть вам полезен
-            .about__right-desc.text-content
-            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
-            .about__right-content
-                ul.skills-list
-                    each item in ['frontend', 'backend', 'workflow']
-                        li.skills-list__item
-                            .skills-row
-                                .skills-row__title #{item}
-                                ul.skills-row__list
-                                    li.skills-row__item
-                                    .skill
-                                    svg.skill__circle
-                                    .skill__title Html5
+            .about__right
+                .triangle.about__triangle-right
+                    svg.triangle-shape.triangle-shape--fill-beige
+                .about__right-title
+                    .block-subtitle Чем я могу быть вам полезен
+                .about__right-desc.text-content
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                .about__right-content
+                    ul.skills-list
+                        each item in ['frontend', 'backend', 'workflow']
+                            li.skills-list__item
+                                .skills-row
+                                    .skills-row__title #{item}
+                                    ul.skills-row__list
+                                        li.skills-row__item
+                                        .skill
+                                        svg.skill__circle
+                                        .skill__title Html5
     section.section.map
         .google-map
         .map-data  
@@ -74,13 +71,14 @@ block content
                                 .contacts-row__icon #{item[0]}
                                 .contacts-row__title #{item[1]}
     footer.footer
-        .footer-row
-            .footer-col.footer-col--left
-                include ../common/menu.pug
-            .footer-col.footer-col--right
-                
-        .footer-row
-            .footer-col.footer-col--left
-                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.  
-            .footer-col.footer-col--right
-                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.  - Martin Golding
+        .container
+            .footer-row
+                .footer-col.footer-col--left
+                    include ../common/menu.pug
+                .footer-col.footer-col--right
+                    
+            .footer-row
+                .footer-col.footer-col--left
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.  
+                .footer-col.footer-col--right
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.  - Martin Golding

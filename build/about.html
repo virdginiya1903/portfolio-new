@@ -12,102 +12,106 @@
   </head>
   <body>
     <section class="section hero">
-      <div class="hero__socials">
-        <ul class="socials">
-          <li class="socials__item"><a class="socials__link" href="vk.com" title="Моя страница Вконтакте">
-              <svg class="svg socials__svg" width="31" height="17">
-                <use xlink:href="assets/images/sprite.svg#vk"></use>
-              </svg></a></li>
-          <li class="socials__item"><a class="socials__link" href="github.com" title="Моя страница GitHub">
-              <svg class="svg socials__svg" width="26" height="22">
-                <use xlink:href="assets/images/sprite.svg#github"></use>
-              </svg></a></li>
-          <li class="socials__item"><a class="socials__link" href="#" title="Моя страница LinkedIn">
-              <svg class="svg socials__svg" width="24" height="22">
-                <use xlink:href="assets/images/sprite.svg#in"></use>
-              </svg></a></li>
-        </ul>
-      </div>
-      <div class="hero__menu hamburger"></div>
-      <div class="hero__title">
-        <div class="section-title"></div><img class="section-title__img" src="" alt="">
-      </div>
-      <div class="user hero__user">
-        <div class="user__pic"><img class="user__avatar"></div>
-        <div class="user__description">
-          <div class="user__name">Владимир Астахов</div>
-          <div class="user__desc">Личный сайт веб разработчика</div>
+      <div class="container">
+        <header class="hero__header">
+          <div class="hero__socials">
+            <ul class="socials">
+              <li class="socials__item"><a class="socials__link" href="vk.com" title="Моя страница Вконтакте">
+                  <svg class="svg socials__svg" width="31" height="17">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="github.com" title="Моя страница GitHub">
+                  <svg class="svg socials__svg" width="26" height="22">
+                    <use xlink:href="assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#" title="Моя страница LinkedIn">
+                  <svg class="svg socials__svg" width="24" height="22">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hero__menu">   <a class="hamburger" href="#">
+              <div class="hamburger__bars"></div></a></div>
+        </header>
+        <div class="welcome__profil profil">
+          <div class="profil__pic"><img class="photo__avatar visually-hidden" src="assets/images/img/03.jpg" alt="avatar"></div>
+          <div class="profil__desc">
+            <h3 class="profil__title"> Ахметова Гузель </h3>
+            <p class="profil__text">Личный сайт веб разработчика</p>
+          </div>
         </div>
+        <div class="arrow-down hero__scroll-button"></div>
       </div>
-      <div class="arrow-down hero__scroll-button"></div>
     </section>
     <main class="section about">
-      <div class="about__left">
-        <div class="triangle about__triangle-left">
-          <svg class="triangle-shape triangle-shape--fill-white"></svg>
-        </div>
-        <div class="about__left-title">
-          <div class="block-title">Обо мне</div>
-        </div>
-        <div class="about__left-description">
-          <div class="user-description">
-            <div class="user-description__image"><img class="user-description__avatar" src="" alt=""></div>
-            <div class="user-description__title">
-              <div class="block-subtitle">Кто я</div>
-            </div>
-            <div class="user-description__text text-content">
-              <p>Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. </p>
-              <p>Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. </p>
-              <p>А пока посмотрите, как тут всё классно и красиво!</p>
+      <div class="container">
+        <div class="about__left">
+          <div class="triangle about__triangle-left">
+            <svg class="triangle-shape triangle-shape--fill-white"></svg>
+          </div>
+          <div class="about__left-title">
+            <div class="block-title">Обо мне</div>
+          </div>
+          <div class="about__left-description">
+            <div class="user-description">
+              <div class="user-description__image"><img class="user-description__avatar" src="" alt=""></div>
+              <div class="user-description__title">
+                <div class="block-subtitle">Кто я</div>
+              </div>
+              <div class="user-description__text text-content">
+                <p>Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. </p>
+                <p>Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. </p>
+                <p>А пока посмотрите, как тут всё классно и красиво!</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="about__right">
-        <div class="triangle about__triangle-right">
-          <svg class="triangle-shape triangle-shape--fill-beige"></svg>
-        </div>
-        <div class="about__right-title">
-          <div class="block-subtitle">Чем я могу быть вам полезен</div>
-        </div>
-        <div class="about__right-desc text-content"></div>
-        <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.</p>
-        <div class="about__right-content">
-          <ul class="skills-list">
-            <li class="skills-list__item">
-              <div class="skills-row">
-                <div class="skills-row__title">frontend</div>
-                <ul class="skills-row__list">
-                  <li class="skills-row__item"></li>
-                  <div class="skill"></div>
-                  <svg class="skill__circle"></svg>
-                  <div class="skill__title">Html5</div>
-                </ul>
-              </div>
-            </li>
-            <li class="skills-list__item">
-              <div class="skills-row">
-                <div class="skills-row__title">backend</div>
-                <ul class="skills-row__list">
-                  <li class="skills-row__item"></li>
-                  <div class="skill"></div>
-                  <svg class="skill__circle"></svg>
-                  <div class="skill__title">Html5</div>
-                </ul>
-              </div>
-            </li>
-            <li class="skills-list__item">
-              <div class="skills-row">
-                <div class="skills-row__title">workflow</div>
-                <ul class="skills-row__list">
-                  <li class="skills-row__item"></li>
-                  <div class="skill"></div>
-                  <svg class="skill__circle"></svg>
-                  <div class="skill__title">Html5</div>
-                </ul>
-              </div>
-            </li>
-          </ul>
+        <div class="about__right">
+          <div class="triangle about__triangle-right">
+            <svg class="triangle-shape triangle-shape--fill-beige"></svg>
+          </div>
+          <div class="about__right-title">
+            <div class="block-subtitle">Чем я могу быть вам полезен</div>
+          </div>
+          <div class="about__right-desc text-content"></div>
+          <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.</p>
+          <div class="about__right-content">
+            <ul class="skills-list">
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">frontend</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item"></li>
+                    <div class="skill"></div>
+                    <svg class="skill__circle"></svg>
+                    <div class="skill__title">Html5</div>
+                  </ul>
+                </div>
+              </li>
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">backend</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item"></li>
+                    <div class="skill"></div>
+                    <svg class="skill__circle"></svg>
+                    <div class="skill__title">Html5</div>
+                  </ul>
+                </div>
+              </li>
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">workflow</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item"></li>
+                    <div class="skill"></div>
+                    <svg class="skill__circle"></svg>
+                    <div class="skill__title">Html5</div>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
@@ -140,23 +144,25 @@
       </div>
     </section>
     <footer class="footer">
-      <div class="footer-row">
-        <div class="footer-col footer-col--left">
-          <ul class="menu">
-            <li><a href="my-works.html">Мои работы</a></li>
-            <li><a href="/about.html">Обо мне</a></li>
-            <li><a href="blog.html">Блог</a></li>
-            <li><a href="/index.html">Авторизация</a></li>
-          </ul>
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col footer-col--left">
+            <ul class="menu">
+              <li><a href="my-works.html">Мои работы</a></li>
+              <li><a href="/about.html">Обо мне</a></li>
+              <li><a href="blog.html">Блог</a></li>
+              <li><a href="/index.html">Авторизация</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col--right"></div>
         </div>
-        <div class="footer-col footer-col--right"></div>
-      </div>
-      <div class="footer-row">
-        <div class="footer-col footer-col--left">
-          <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.  </p>
-        </div>
-        <div class="footer-col footer-col--right">
-          <p>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.  - Martin Golding</p>
+        <div class="footer-row">
+          <div class="footer-col footer-col--left">
+            <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.  </p>
+          </div>
+          <div class="footer-col footer-col--right">
+            <p>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.  - Martin Golding</p>
+          </div>
         </div>
       </div>
     </footer>

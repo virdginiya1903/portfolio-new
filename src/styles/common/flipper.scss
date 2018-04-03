@@ -17,6 +17,9 @@
 }
 .welcome__socials  {
     margin-top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .welcome__link {
     font-family: 'robotomedium';

@@ -1,11 +1,25 @@
 
-.hamburger {
+  .hamburger {
+    vertical-align: middle;
+    position: relative;
+    height: rem(22px);
+    align-items: center;
+    display: flex;
+    &:hover {
+    }
+    // @include tablets() {
+    //   display: flex;
+    // }
+
+  }
+.hamburger__bars {
     &, &:before, &:after {
       background: #fff;
-      width: rem(24px);
-      height: rem(5px);
-      border-radius: rem(3px);
-  
+      width: rem(40px);
+      height: rem(3px);
+      border-radius: rem(4px);
+
+     
     }
   
     &:before, &:after {
@@ -21,4 +35,9 @@
     &:after {
       bottom: 0;
     }
+    
   }
+  .hero__menu {
+    display: flex;
+    align-items: center;
+}
