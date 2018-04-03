@@ -1,5 +1,15 @@
 .welcome {
   background: url('../images/img/photo-1454111079122-eb76eb2d5754.jpg') center center no-repeat;
-position: relative;
-background-size: cover;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.welcome__copyright {
+  position: absolute;
+  bottom: rem(40px);
+  font-family: 'robotoregular';
+  color: rgba(255, 255, 255, 0.7);
 }
