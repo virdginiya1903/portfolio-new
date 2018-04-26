@@ -5,14 +5,18 @@ block variables
 
 block content
     section.section.hero
-        .container
+        .container.hero__container
             header.hero__header
                 .hero__socials
                     include ../common/socials.pug
-                .hero__menu    
+                .hero__menu  
                     a(href="#").hamburger
                         .hamburger__bars
-            include ../common/profil.pug       
+            .hero__content
+                svg.svg.portfolio-header__svg 
+                    use(xlink:href="assets/images/sprite.svg#portfolio_header")            
+            .hero__desc
+                include ../common/profil.pug       
             .arrow-down.hero__scroll-button
 
     main.section.about
@@ -32,8 +36,6 @@ block content
                             p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. 
                             p Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
                             p А пока посмотрите, как тут всё классно и красиво!
-
-
             .about__right
                 .triangle.about__triangle-right
                     svg.triangle-shape.triangle-shape--fill-beige
@@ -59,17 +61,20 @@ block content
                 .contacts__title
                     .block-subtitle Контакты
                     ul.contacts__list
-                        -
-                            var contacts = [
-                                ['skype', 'skype_kdn'],
-                                ['mail', 'astahov@gmail.com'],
-                                ['phone', '+7 931 200 93 24'],
-                                ['address', 'Новосибирск, ул. Инская, д.14']
-                            ]
-                        each item in contacts 
-                            li.contacts__item.contacts-row  
-                                .contacts-row__icon #{item[0]}
-                                .contacts-row__title #{item[1]}
+                        li.contacts__item.contacts-row
+                            svg.contacts-row__icon(width="26" height="22")
+                            .contacts-row__title virdginiya1903
+                        li.contacts__item.contacts-row
+                            svg.contacts-row__icon(width="26" height="22")
+                            .contacts-row__title virdginiya1903@mail.ru
+                        li.contacts__item.contacts-row
+                            svg.contacts-row__icon(width="26" height="22")
+                            .contacts-row__title 8(999)8089179                       
+                        li.contacts__item.contacts-row
+                            svg.contacts-row__icon(width="26" height="22")
+                            
+                            .contacts-row__title г. Москва
+                       
     footer.footer
         .container
             .footer-row

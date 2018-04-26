@@ -1,5 +1,12 @@
 .contacts {
-    width: 380px;
-    height: 312px;
-    background-color: rgba(244, 245, 240, 0.85);
+    background-color: rgba(244,245,240,0.85);
+    border-radius: 15px;
+    color: #566358;
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    padding: 30px 45px;
+}
+.contacts-row {
+    display: flex;
 }

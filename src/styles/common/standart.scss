@@ -24,3 +24,18 @@
     margin: 0 auto;
     max-width:  rem(960px);
 }
+.block-subtitle {
+    font-size: 35px;
+    color: #566358;
+    font-family: 'sansus_webissimoregular';
+    text-transform: uppercase;
+}
+.hero__container {
+width: 95%;
+margin: 0 auto;
+/* height: 100%; */
+max-width: 60rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}

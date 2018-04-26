@@ -2,6 +2,7 @@
     background: url('../images/img/photo-1454111079122-eb76eb2d5754.jpg' ) center center no-repeat;
     background-size: cover;
     min-height: rem(620px);
+    display: flex;
 }
 
 .hero__header {
@@ -9,3 +10,29 @@
     justify-content: space-between;
 }
 
+.hero__content {
+    width: 95%;
+    height: 40%;
+    position: absolute;
+}
+.hero__socials {
+position: absolute;
+top: 20px;
+left: 20px;
+}
+.hero__desc {
+    z-index: 2;
+}
+.hero__container {
+    width: 95%;
+    margin: 0 auto;
+    /* height: 100%; */
+    max-width: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .portfolio-header__svg {
+        fill: rgba(255,255,255,0.2);
+
+    }

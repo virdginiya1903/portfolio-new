@@ -12,7 +12,7 @@
   </head>
   <body>
     <section class="section hero">
-      <div class="container">
+      <div class="container hero__container">
         <header class="hero__header">
           <div class="hero__socials">
             <ul class="socials">
@@ -30,14 +30,21 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="hero__menu">   <a class="hamburger" href="#">
+          <div class="hero__menu"> <a class="hamburger" href="#">
               <div class="hamburger__bars"></div></a></div>
         </header>
-        <div class="welcome__profil profil">
-          <div class="profil__pic"><img class="photo__avatar visually-hidden" src="assets/images/img/03.jpg" alt="avatar"></div>
-          <div class="profil__desc">
-            <h3 class="profil__title"> Ахметова Гузель </h3>
-            <p class="profil__text">Личный сайт веб разработчика</p>
+        <div class="hero__content">
+          <svg class="svg portfolio-header__svg"> 
+            <use xlink:href="assets/images/sprite.svg#portfolio_header">           </use>
+          </svg>
+        </div>
+        <div class="hero__desc">
+          <div class="welcome__profil profil">
+            <div class="profil__pic"><img class="photo__avatar visually-hidden" src="assets/images/img/03.jpg" alt="avatar"></div>
+            <div class="profil__desc">
+              <h3 class="profil__title"> Ахметова Гузель </h3>
+              <p class="profil__text">Личный сайт веб разработчика</p>
+            </div>
           </div>
         </div>
         <div class="arrow-down hero__scroll-button"></div>
@@ -122,21 +129,21 @@
           <div class="contacts__title">
             <div class="block-subtitle">Контакты</div>
             <ul class="contacts__list">
-              <li class="contacts__item contacts-row"> 
-                <div class="contacts-row__icon">skype</div>
-                <div class="contacts-row__title">skype_kdn</div>
+              <li class="contacts__item contacts-row">
+                <svg class="contacts-row__icon" width="26" height="22"></svg>
+                <div class="contacts-row__title">virdginiya1903</div>
               </li>
-              <li class="contacts__item contacts-row"> 
-                <div class="contacts-row__icon">mail</div>
-                <div class="contacts-row__title">astahov@gmail.com</div>
+              <li class="contacts__item contacts-row">
+                <svg class="contacts-row__icon" width="26" height="22"></svg>
+                <div class="contacts-row__title">virdginiya1903@mail.ru</div>
               </li>
-              <li class="contacts__item contacts-row"> 
-                <div class="contacts-row__icon">phone</div>
-                <div class="contacts-row__title">+7 931 200 93 24</div>
+              <li class="contacts__item contacts-row">
+                <svg class="contacts-row__icon" width="26" height="22"></svg>
+                <div class="contacts-row__title">8(999)8089179                       </div>
               </li>
-              <li class="contacts__item contacts-row"> 
-                <div class="contacts-row__icon">address</div>
-                <div class="contacts-row__title">Новосибирск, ул. Инская, д.14</div>
+              <li class="contacts__item contacts-row">
+                <svg class="contacts-row__icon" width="26" height="22"></svg>
+                <div class="contacts-row__title">г. Москва</div>
               </li>
             </ul>
           </div>

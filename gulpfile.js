@@ -52,11 +52,16 @@ const paths = {
     images: {
         src: 'src/images/**/*.*',
         dest: 'build/assets/images/'
-    },
+    },  
     scripts: {
         src: 'src/scripts/**/*.js',
         dest: 'build/assets/scripts/'
+    },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/assets/fonts/'
     }
+
 }
 
 // pug
@@ -95,7 +100,7 @@ function watch() {
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
-    gulp.watch(paths.src + '/fonts/*.{otf,ttf,woff,woff2}', copyFonts);
+    gulp.watch(paths.fonts.src, fonts);
 
 
 }
@@ -172,32 +177,23 @@ gulp.task('deploy', function() {
         .pipe(ghPages());
 });
 
-const fonts = 
-  paths.src + '/fonts/*.{otf,ttf,woff,woff2}';
-
-  function copyFonts() { 
-    if(fonts.length) {
-      return gulp.src(fonts)
-        .pipe(gulp.dest(paths.build + '/assets/fonts'));
-    }
-    else {
-      console.log('Шрифты не обрабатываются.');
-      callback();
-    }
-  };
+function fonts() {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
+}
 
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
-exports.copyFonts = copyFonts;
+exports.fonts = fonts;
 
 
 
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts,copyFonts),
+    gulp.parallel(styles, templates, images, scripts,fonts),
     gulp.parallel(watch, server),
 
 ));
